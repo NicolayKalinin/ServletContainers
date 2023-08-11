@@ -1,10 +1,10 @@
-package ru.netology.controller;
+package src.main.java.ru.netology.controller;
 
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import ru.netology.model.Post;
-import ru.netology.service.PostService;
+import src.main.java.ru.netology.model.Post;
+import src.main.java.ru.netology.service.PostService;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

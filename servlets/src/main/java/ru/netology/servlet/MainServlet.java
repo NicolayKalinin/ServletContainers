@@ -1,9 +1,8 @@
-package ru.netology.servlet;
+package src.main.java.ru.netology.servlet;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import ru.netology.controller.PostController;
-import ru.netology.repository.PostRepository;
-import ru.netology.service.PostService;
+import src.main.java.ru.netology.controller.PostController;
+import src.main.java.ru.netology.repository.PostRepository;
+import src.main.java.ru.netology.service.PostService;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,13 +18,9 @@ public class MainServlet extends HttpServlet {
 
     @Override
     public void init() {
-        //инициализируем необходимые сущности
-        //отдаём список пакетов, в которых необходимо искать аннотационные классы
-        AnnotationConfigApplicationContext configApplicationContext = new AnnotationConfigApplicationContext("ru.netology.servlet");//передаем пакет, в котором необходимо искать бины
-        //получаем по классу бина
-        controller = configApplicationContext.getBean(PostController.class);
-        final PostRepository repository = configApplicationContext.getBean(PostRepository.class);
-        final PostService service = configApplicationContext.getBean(PostService.class);
+        final var repository = new PostRepository();
+        final var service = new PostService(repository);
+        controller = new PostController(service);
     }
 
     @Override

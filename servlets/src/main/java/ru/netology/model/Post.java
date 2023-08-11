@@ -1,4 +1,4 @@
-package ru.netology.model;
+package src.main.java.ru.netology.model;
 
 public class Post {
     private long id;
