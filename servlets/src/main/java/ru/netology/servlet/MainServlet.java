@@ -19,13 +19,9 @@ public class MainServlet extends HttpServlet {
 
     @Override
     public void init() {
-        //инициализируем необходимые сущности
-        //отдаём список пакетов, в которых необходимо искать аннотационные классы
-        AnnotationConfigApplicationContext configApplicationContext = new AnnotationConfigApplicationContext("ru.netology.servlet");//передаем пакет, в котором необходимо искать бины
-        //получаем по классу бина
-        controller = configApplicationContext.getBean(PostController.class);
-        final PostRepository repository = configApplicationContext.getBean(PostRepository.class);
-        final PostService service = configApplicationContext.getBean(PostService.class);
+        final var repository = new PostRepository();
+        final var service = new PostService(repository);
+        controller = new PostController(service);
     }
 
     @Override
