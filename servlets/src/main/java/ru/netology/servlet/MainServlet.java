@@ -1,9 +1,8 @@
-package ru.netology.servlet;
+package src.main.java.ru.netology.servlet;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import ru.netology.controller.PostController;
-import ru.netology.repository.PostRepository;
-import ru.netology.service.PostService;
+import src.main.java.ru.netology.controller.PostController;
+import src.main.java.ru.netology.repository.PostRepository;
+import src.main.java.ru.netology.service.PostService;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

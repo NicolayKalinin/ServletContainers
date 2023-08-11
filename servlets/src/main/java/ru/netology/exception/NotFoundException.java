@@ -1,4 +1,4 @@
-package ru.netology.exception;
+package src.main.java.ru.netology.exception;
 
 public class NotFoundException extends RuntimeException {
     public NotFoundException() {
